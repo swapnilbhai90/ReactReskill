@@ -12,9 +12,10 @@ const ProfileCard=(props)=> {
      
       />
         
-      <div class="textOwnerName"><b>Onwer Name :</b>{props.name}</div>
-      <div class="textOwnerName"><b>Email Id :</b>{props.email}</div>
-    
+      <div class="textOwnerName"><b>Product :</b>{props.name}</div>
+      <div class="textOwnerName"><b>category :</b>{props.email}</div>
+      <div class="textOwnerName"><b>Stock :</b>{props.stock}</div>
+      <div class="textOwnerName"><b>Price :</b>{props.price}</div>
 
       </div>
    </>
