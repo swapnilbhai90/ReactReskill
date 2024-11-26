@@ -8,19 +8,35 @@ import "../carWebsite/carProfile.css";
 
 class ProductApiCall extends React.Component {
 
- 
+    
     // Constructor
+    
     constructor(props) {
+
         super(props);
         this.state = {
             items: [],
             DataisLoaded: false,
+            searchTerm:""
         };
+      
+        
     }
+      onInputChangeEvent=(e)=>{
+    console.log(e );
+    console.log(this.items );
+        // const filtermovies=this.items.products.filter(item =>
+        //     item.title.toLowerCase().includes(e.toLowerCase())
+        // )
+
+    }
+
+ 
 
     // ComponentDidMount is used to
     // execute the code
     componentDidMount() {
+
         axios.get(
                 "https://dummyjson.com/products"
             )
@@ -31,6 +47,9 @@ class ProductApiCall extends React.Component {
                 });
             });
     }
+
+
+
     render() {
         const { DataisLoaded, items } = this.state;
         if (!DataisLoaded)
@@ -49,7 +68,9 @@ class ProductApiCall extends React.Component {
      <Link to='/'>Home</Link>
   
 </ul> */}
-
+    <div>
+         <input type="text" placeholder="Search the Product" value={this.searchTerm} onChange={e =>this.onInputChangeEvent(e.target.value)}/>
+    </div>
 
         </div>
         
@@ -57,7 +78,7 @@ class ProductApiCall extends React.Component {
                     {items.products.map((item) => (
 
                             <ProfileCard name={item.title} email={item.category} 
-                            price={item.price} stock={item.stock} url={item.thumbnail}/>
+                            price={item.price} stock={item.stock} url={item.thumbnail} rating={item.rating}/>
       
                        
                     ))}

@@ -24,6 +24,12 @@
   font-size: 14px;
   text-decoration-thickness: 5px;  
   }
+  textRatingGood {
+    text-align: justify; 
+    font-size: 14px;
+    text-decoration-thickness: 5px;  
+    color: red;
+    }
   menu,
 ul {
   display: flex;
